@@ -1,4 +1,107 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAFE SPACE</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#121212;
+    color:white;
+}
+
+header{
+    background:#00b894;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    width:90%;
+    max-width:700px;
+    margin:auto;
+    padding:20px;
+}
+
+textarea{
+    width:100%;
+    height:150px;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+}
+
+button{
+    margin-top:15px;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#00b894;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#019875;
+}
+
+.post{
+    background:#1f1f1f;
+    padding:15px;
+    border-radius:10px;
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>SAFE SPACE</h1>
+<p>Share your story anonymously ❤️</p>
+</header>
+
+<div class="container">
+
+<textarea id="story" placeholder="Write your story here..."></textarea>
+
+<button onclick="postStory()">Post Story</button>
+
+<div id="posts"></div>
+
+</div>
+
+<script>
+
+function postStory(){
+
+let story=document.getElementById("story").value;
+
+if(story==""){
+alert("Please write something.");
+return;
+}
+
+let post=document.createElement("div");
+post.className="post";
+post.innerHTML=story;
+
+document.getElementById("posts").prepend(post);
+
+document.getElementById("story").value="";
+
+}
+
+</script>
+
+</body>
+</html>
 <html>
 <head>
     <title>SafeSpace</title>
